@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "serve": "node ./server/index.js"
+    "serve-example": "node ./server/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +17,11 @@
     "koa-cors": "^0.0.16",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
-    "koa2-connect-history-api-fallback": "^0.1.3"
+    "koa2-connect-history-api-fallback": "^0.1.3",
+    "mini-types": "^0.1.7"
   },
   "dependencies": {
-    "ksher-payment": "^0.0.1"
+    "ksher-payment": "^0.0.5",
+    "miniprogram-api-typings": "^3.3.2"
   }
 }

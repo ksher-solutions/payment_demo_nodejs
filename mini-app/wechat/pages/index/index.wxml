@@ -1,0 +1,37 @@
+<view>
+  <view>
+    <label>金额</label>
+    <input value="{{ amount }}" placeholder="支付金额(分)" data-key="amount" bindinput="onInput" />
+  </view>
+  <view>
+    <label>商户唯一id</label>
+    <input value="{{ merchant_order_id }}" placeholder="唯一id" data-key="merchant_order_id" bindinput="onInput" />
+  </view>
+  <view>
+    <button size="default" type="primary" bindtap="createOrder">创建订单并支付</button>
+  </view>
+</view>
+
+<view style="margin-top:100px">
+  <view>
+    <label>查询订单id</label>
+    <input value="{{ query_order_id }}" placeholder="要查询的唯一订单id" data-key="query_order_id" bindinput="onInput" />
+  </view>
+  <view>
+    <button size="default" type="primary" bindtap="queryOrder">查询订单信息</button>
+  </view>
+</view>
+
+<view style="margin-top:100px">
+  <view>
+    <label>退款订单id</label>
+    <input value="{{ refund_order_id }}" placeholder="要退款的唯一订单id" data-key="refund_order_id" bindinput="onInput" />
+  </view>
+  <view>
+    <label>退款金额</label>
+    <input value="{{ refund_amount }}" placeholder="退款金额(分)" data-key="refund_amount" bindinput="onInput" />
+  </view>
+  <view>
+    <button size="default" type="primary" bindtap="refundOrder">发起退款</button>
+  </view>
+</view>

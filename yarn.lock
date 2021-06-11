@@ -367,10 +367,10 @@ koa@^2.13.0:
     type-is "^1.6.16"
     vary "^1.1.2"
 
-ksher-payment@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/ksher-payment/-/ksher-payment-0.0.1.tgz#cabe16a91d90e253da910ce9f5429af3411ec0d0"
-  integrity sha512-rwz11hFJQw7xdRMLUUBPsJoG8RrlhP9HmA+qvofQ9k19kSQDZVjvTh1YqC7xnzRJvynHAdBor32X5oJH0S/4Kw==
+ksher-payment@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/ksher-payment/-/ksher-payment-0.0.5.tgz#7385b61a8c2e5b87b50a2d4608cc6ab7352487f4"
+  integrity sha512-g59qDI3XuvowYRwEnVMH8NtQcsu+5Bq42avMtM+Qc2uRrSxPiuAnslH0KOX65ljONjFb7Se5a0LLi5ePYBs5Tw==
   dependencies:
     axios "^0.21.1"
     crypto "^1.0.1"
@@ -396,6 +396,16 @@ mime-types@^2.1.18, mime-types@~2.1.24:
   integrity sha512-XGZnNzm3QvgKxa8dpzyhFTHmpP3l5YNusmne07VUOXxou9CqUqYa/HBy124RqtVh/O2pECas/MOcsDgpilPOPg==
   dependencies:
     mime-db "1.48.0"
+
+mini-types@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.npmjs.org/mini-types/-/mini-types-0.1.7.tgz#36d5ea2cf18653b16f5d1a02c8d9b329c727d20a"
+  integrity sha512-aSoVvrIr/O9tbzFjSCeKr/T53Hu+un+FXkfWPfGcb/q8eAHXX1CDgSHv8l0GtFTlfHzznmn4hbRGB3UTWmZ3fA==
+
+miniprogram-api-typings@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-3.3.2.tgz#1e6aa65817e6534850141cd2af23eeff6ba61b4e"
+  integrity sha512-i8yxwPOGYZ33J/VoJR/mA0Ps2JKuUE6wsn8pdHqKpUrskZuxNsjVf8Z5TPLBisYis3drLdJQ5Gjon8WIwXswYg==
 
 ms@2.0.0:
   version "2.0.0"
