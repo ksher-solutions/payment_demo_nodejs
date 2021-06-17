@@ -10,8 +10,6 @@ module.exports = (router, setting) => {
     redirect_url_fail: $redirect_url_fail = 'http://www.baidu.com'
   }  = setting
 
-  // sdk 初始化
-  const ksherPaymentSDK = new PaySDK({ token, host });
 
 
   // 创建订单接口
@@ -22,6 +20,7 @@ module.exports = (router, setting) => {
       redirect_url = $redirect_url,
       redirect_url_fail = $redirect_url_fail,
       timestamp = getTimestamp(),
+      setting = { token, host },
       amount,
       merchant_order_id,
     } = ctx.request.body
@@ -32,6 +31,8 @@ module.exports = (router, setting) => {
     }
 
     const data = { note, provider, redirect_url, redirect_url_fail, timestamp, amount, merchant_order_id }
+    // sdk 初始化
+    const ksherPaymentSDK = new PaySDK(setting);
 
     ctx.body = await ksherPaymentSDK.orderCreate(data)
       .then(({ data }) => ({ code: 1, data }))
@@ -47,6 +48,7 @@ module.exports = (router, setting) => {
   router.post('/api/orderQuery', async (ctx, next) => {
     const {
       order_id,
+      setting = { token, host },
       timestamp = getTimestamp()
     } = ctx.request.body
 
@@ -54,6 +56,8 @@ module.exports = (router, setting) => {
       ctx.body = { code: 0, message: '参数不全' }
       return next()
     }
+    // sdk 初始化
+    const ksherPaymentSDK = new PaySDK(setting);
 
     ctx.body = await ksherPaymentSDK.orderQuery(order_id, { timestamp })
       .then(({ data }) => ({ code: 1, data }))
@@ -70,6 +74,7 @@ module.exports = (router, setting) => {
     const {
       order_id,
       refund_amount,
+      setting = { token, host },
       timestamp = getTimestamp(),
       refund_order_id = getTimestamp(),
     } = ctx.request.body
@@ -83,6 +88,8 @@ module.exports = (router, setting) => {
       timestamp,
       refund_order_id,
     }
+    // sdk 初始化
+    const ksherPaymentSDK = new PaySDK(setting);
 
     console.log({ order_id, data });
     ctx.body = await ksherPaymentSDK.orderRefund(order_id, data)

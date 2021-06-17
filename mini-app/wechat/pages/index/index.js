@@ -103,7 +103,7 @@ Page({
       data: { order_id, refund_amount },
       success(res) {
         if (res.data && res.data.code === 1) {
-          wx.alert({
+          wx.showModal({
             title: '订单信息',
             content: JSON.stringify(res.data.data, null, ' ')
           })
