@@ -22,6 +22,7 @@ module.exports = (router, setting) => {
       timestamp = getTimestamp(),
       setting = { token, host },
       amount,
+      channel,
       merchant_order_id,
     } = ctx.request.body
 
@@ -31,6 +32,9 @@ module.exports = (router, setting) => {
     }
 
     const data = { note, provider, redirect_url, redirect_url_fail, timestamp, amount, merchant_order_id }
+    if (channel) {
+      data.channel = channel
+    }
     // sdk 初始化
     const ksherPaymentSDK = new PaySDK(setting);
 
