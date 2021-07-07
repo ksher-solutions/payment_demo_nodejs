@@ -35,18 +35,18 @@ Page({
           console.log('发起支付');
           let {
             reference,
-            paySign,
-            signType,
-            timestamp: timeStamp,
-            nonceStr
+            reserved1, //: "1625566379"
+            reserved2, //: "MD5"
+            reserved3, //: "B516A3F7C98F9D618C90AADC572B39EE"
+            reserved4, //: "Ve43IJEqQa1oPGY"
           } = res.data.data
           // 将支付网关的返回信息拼成支付信息
           const payData = {
-            timeStamp,
-            nonceStr,
-            package: `prepay_id=${ reference }`,
-            signType,
-            paySign,
+            package: reference,
+            timeStamp: reserved1,
+            signType: reserved2,
+            paySign: reserved3,
+            nonceStr: reserved4
           }
           console.log(payData);
           wx.requestPayment({
